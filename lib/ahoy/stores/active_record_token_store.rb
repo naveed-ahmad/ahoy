@@ -18,6 +18,7 @@ module Ahoy
         begin
           visit.save!
           geocode(visit)
+          visit
         rescue *unique_exception_classes
           # do nothing
         end
@@ -52,6 +53,7 @@ module Ahoy
           yield(event) if block_given?
 
           event.save!
+          event
         end
       end
 

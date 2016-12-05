@@ -17,6 +17,7 @@ module Ahoy
         begin
           visit.save!
           geocode(visit)
+          visit
         rescue *unique_exception_classes
           # do nothing
         end
@@ -37,6 +38,7 @@ module Ahoy
 
         begin
           event.save!
+          event
         rescue *unique_exception_classes
           # do nothing
         end
